@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Button from "./components/Button";
+import Carousel from "./components/Carousel";
+import Modal from "react-bootstrap/Modal";
+import "./css/App.css";
 
 function App() {
+  const [show, setShow] = useState(true);
+  const handleClose = () => setShow(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Modal
+        size="lg"
+        show={show}
+        onHide={handleClose}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Welcome to the Maze Visualizer!
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Carousel />
+        </Modal.Body>
+      </Modal>
+
+      <Navbar />
+    </React.Fragment>
   );
 }
 
