@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Maze_Pathfinder/static/css/main.2206fc56.chunk.css",
+    "main.js": "/Maze_Pathfinder/static/js/main.61933f4c.chunk.js",
+    "main.js.map": "/Maze_Pathfinder/static/js/main.61933f4c.chunk.js.map",
+    "runtime-main.js": "/Maze_Pathfinder/static/js/runtime-main.c10f2363.js",
+    "runtime-main.js.map": "/Maze_Pathfinder/static/js/runtime-main.c10f2363.js.map",
+    "static/css/2.deaf9b8d.chunk.css": "/Maze_Pathfinder/static/css/2.deaf9b8d.chunk.css",
+    "static/js/2.de621580.chunk.js": "/Maze_Pathfinder/static/js/2.de621580.chunk.js",
+    "static/js/2.de621580.chunk.js.map": "/Maze_Pathfinder/static/js/2.de621580.chunk.js.map",
+    "index.html": "/Maze_Pathfinder/index.html",
+    "precache-manifest.b7e2e86f86eb19e1536f1c1245af5617.js": "/Maze_Pathfinder/precache-manifest.b7e2e86f86eb19e1536f1c1245af5617.js",
+    "service-worker.js": "/Maze_Pathfinder/service-worker.js",
+    "static/css/2.deaf9b8d.chunk.css.map": "/Maze_Pathfinder/static/css/2.deaf9b8d.chunk.css.map",
+    "static/css/main.2206fc56.chunk.css.map": "/Maze_Pathfinder/static/css/main.2206fc56.chunk.css.map",
+    "static/js/2.de621580.chunk.js.LICENSE.txt": "/Maze_Pathfinder/static/js/2.de621580.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c10f2363.js",
+    "static/css/2.deaf9b8d.chunk.css",
+    "static/js/2.de621580.chunk.js",
+    "static/css/main.2206fc56.chunk.css",
+    "static/js/main.61933f4c.chunk.js"
+  ]
+}
