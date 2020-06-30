@@ -4,7 +4,10 @@ import { Cell } from "../ts/Cell";
 import { Graph } from "../ts/Graph";
 import { DFS } from "../ts/DFS";
 import { BFS } from "../ts/BFS";
+import { GS } from "../ts/GS";
+
 import p5 from "p5";
+
 import P5Wrapper from "../p5/wrapper";
 
 export interface BoardProps {
@@ -14,6 +17,7 @@ export interface BoardProps {
   buildToggleOn: boolean;
   buildDFSToggleOn: boolean;
   buildBFSToggleOn: boolean;
+  buildGSToggleOn: boolean;
   clearToggleOn: boolean;
   resetToggle: boolean;
   index: number;
@@ -53,6 +57,7 @@ class Board extends React.Component<BoardProps, BoardState> {
       w,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       buildToggleOn,
       gridWidthHeight,
       clearToggleOn,
@@ -132,7 +137,7 @@ class Board extends React.Component<BoardProps, BoardState> {
         bestPathIndex = 0;
 
         //dfs = new DFS(maze.getGraph(), 0, this.props.N * this.props.N - 1);
-        if (buildDFSToggleOn || buildBFSToggleOn) {
+        if (buildDFSToggleOn || buildBFSToggleOn || buildGSToggleOn) {
           if (buildDFSToggleOn) {
             pfAlgorithm = new DFS(
               maze.getGraph(),
@@ -149,6 +154,23 @@ class Board extends React.Component<BoardProps, BoardState> {
           }
           if (buildBFSToggleOn) {
             pfAlgorithm = new BFS(
+              maze.getGraph(),
+              0,
+              this.props.N * this.props.N - 1
+            );
+
+            pfAlgorithm.path(this.props.N * this.props.N - 1);
+            pathArray = pfAlgorithm.getPath((num: any) => {});
+            traversalPathArray = pfAlgorithm.getVistedVertices(
+              (num: any) => {}
+            );
+
+            algorithmCurrentElement = pathArray[0];
+            bestPathCurrentElement = traversalPathArray[0];
+          }
+
+          if (buildGSToggleOn) {
+            pfAlgorithm = new GS(
               maze.getGraph(),
               0,
               this.props.N * this.props.N - 1
@@ -212,6 +234,9 @@ class Board extends React.Component<BoardProps, BoardState> {
           buildMazeFast();
           getPath();
         } else if (buildBFSToggleOn) {
+          buildMazeFast();
+          getPath();
+        } else if (buildGSToggleOn) {
           buildMazeFast();
           getPath();
         } else {

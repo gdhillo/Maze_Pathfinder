@@ -7,6 +7,7 @@ export interface ButtonProps {
   onBuildMaze?: () => void;
   onDFSTraversal?: () => void;
   onBFSTraversal?: () => void;
+  onGSTraversal?: () => void;
   onClear?: () => void;
 }
 
@@ -20,6 +21,7 @@ const Button = (props: ButtonProps) => {
         props.onBuildMaze ||
         props.onDFSTraversal ||
         props.onBFSTraversal ||
+        props.onGSTraversal ||
         props.onClear
       }
     >

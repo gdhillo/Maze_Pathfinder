@@ -7,6 +7,7 @@ export interface NavbarProps {
   onBuildMaze: () => void;
   onDFSTraversal: () => void;
   onBFSTraversal: () => void;
+  onGSTraversal: () => void;
   onClear: () => void;
   onReset: () => void;
 }
@@ -15,6 +16,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <nav className="nav">
       <a className="nav-link">Maze_Pathfinder</a>
+
       <Button
         text="Build Maze"
         buttonType={"btn btn-link"}
@@ -38,6 +40,11 @@ const Navbar = (props: NavbarProps) => {
           text="BFS"
           buttonType={"btn-link dropdown-item"}
           onBFSTraversal={props.onBFSTraversal}
+        />
+        <Button
+          text="GS"
+          buttonType={"btn-link dropdown-item"}
+          onBFSTraversal={props.onGSTraversal}
         />
 
         <div className="dropdown-divider"></div>

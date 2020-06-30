@@ -66,6 +66,17 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
               level.
             </p>
 
+            <p className="font-weight-bold text-center">
+              Option 3: Gurpreet Search
+            </p>
+
+            <p className="text-center">
+              This is a modified depth first search algorithm. The algorithm
+              explores as far as possible along each path and will always choose
+              the cells with the highest index before backtracking to other
+              paths. The cell at the end of the maze has the highest index.
+            </p>
+
             <img src="" alt="" />
           </div>
         </div>

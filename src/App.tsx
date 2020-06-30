@@ -8,6 +8,8 @@ import { Graph } from "./ts/Graph";
 import { Cell } from "./ts/Cell";
 import { DFS } from "./ts/DFS";
 import { BFS } from ".//ts/BFS";
+import { GS } from "./ts/GS";
+
 import "./css/App.css";
 
 export interface AppState {
@@ -18,6 +20,7 @@ export interface AppState {
   buildToggleOn: boolean;
   buildDFSToggleOn: boolean;
   buildBFSToggleOn: boolean;
+  buildGSToggleOn: boolean;
   clearToggleOn: boolean;
   resetToggle: boolean;
   index: number;
@@ -45,6 +48,7 @@ class App extends React.Component<{}, AppState> {
       buildToggleOn: false,
       buildDFSToggleOn: false,
       buildBFSToggleOn: false,
+      buildGSToggleOn: false,
       clearToggleOn: false,
       resetToggle: false,
       index: 0,
@@ -78,6 +82,7 @@ class App extends React.Component<{}, AppState> {
           onBuildMaze={this.handleBuildMaze}
           onDFSTraversal={this.handleDFSTraversal}
           onBFSTraversal={this.handelBFSTraversal}
+          onGSTraversal={this.handelGSTraversal}
           onClear={this.handelClear}
           onReset={this.handelReset}
         />
@@ -88,6 +93,7 @@ class App extends React.Component<{}, AppState> {
           buildToggleOn={this.state.buildToggleOn}
           buildDFSToggleOn={this.state.buildDFSToggleOn}
           buildBFSToggleOn={this.state.buildBFSToggleOn}
+          buildGSToggleOn={this.state.buildGSToggleOn}
           resetToggle={this.state.resetToggle}
           clearToggleOn={this.state.clearToggleOn}
           index={this.state.index}
@@ -108,6 +114,7 @@ class App extends React.Component<{}, AppState> {
     const buildToggleOn = true;
     const buildDFSToggleOn = false;
     const buildBFSToggleOn = false;
+    const buildGSToggleOn = false;
     const clearToggleOn = false;
 
     const maze = new Maze(this.N);
@@ -120,6 +127,7 @@ class App extends React.Component<{}, AppState> {
       buildToggleOn,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       clearToggleOn,
       graph,
       maze,
@@ -132,7 +140,7 @@ class App extends React.Component<{}, AppState> {
     const buildDFSToggleOn = true;
     const buildToggleOn = true;
     const buildBFSToggleOn = false;
-    const buildBiDirectionalBFSOn = false;
+    const buildGSToggleOn = false;
     const clearToggleOn = false;
 
     const maze = new Maze(this.N);
@@ -147,6 +155,7 @@ class App extends React.Component<{}, AppState> {
       buildToggleOn,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       clearToggleOn,
       maze,
       graph,
@@ -159,6 +168,8 @@ class App extends React.Component<{}, AppState> {
     const buildDFSToggleOn = false;
     const buildToggleOn = true;
     const buildBFSToggleOn = true;
+    const buildGSToggleOn = false;
+
     const clearToggleOn = false;
 
     const maze = new Maze(this.N);
@@ -168,25 +179,52 @@ class App extends React.Component<{}, AppState> {
     const graph = new Graph(this.N * this.N);
 
     const pfAlgorithm = new BFS(maze.getGraph(), 0, this.N * this.N - 1);
-    console.log("this finished running");
 
     this.setState({
       buildToggleOn,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       clearToggleOn,
       maze,
       graph,
       index,
       pfAlgorithm,
     });
-    console.log("BFS");
+  };
+
+  handelGSTraversal = () => {
+    const buildDFSToggleOn = false;
+    const buildToggleOn = true;
+    const buildBFSToggleOn = false;
+    const buildGSToggleOn = true;
+    const clearToggleOn = false;
+    const maze = new Maze(this.N);
+    maze.setGraph(this.state.maze.getGraph());
+    maze.setList(this.state.maze.getList());
+    const index = 0;
+    const graph = new Graph(this.N * this.N);
+    const pfAlgorithm = new GS(maze.getGraph(), 0, this.N * this.N - 1);
+
+    this.setState({
+      buildToggleOn,
+      buildDFSToggleOn,
+      buildBFSToggleOn,
+      buildGSToggleOn,
+      clearToggleOn,
+      maze,
+      graph,
+      index,
+      pfAlgorithm,
+    });
   };
 
   handelClear = () => {
     const buildDFSToggleOn = false;
     const buildToggleOn = true;
     const buildBFSToggleOn = false;
+    const buildGSToggleOn = false;
+
     const clearToggleOn = true;
     const maze = new Maze(this.N);
     maze.setGraph(this.state.maze.getGraph());
@@ -195,25 +233,25 @@ class App extends React.Component<{}, AppState> {
     const graph = new Graph(this.N * this.N);
 
     const pfAlgorithm = new BFS(maze.getGraph(), 0, this.N * this.N - 1);
-    console.log("this finished running");
 
     this.setState({
       buildToggleOn,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       clearToggleOn,
       maze,
       graph,
       index,
       pfAlgorithm,
     });
-    console.log("BFS");
   };
 
   handelReset = () => {
     const resetToggle = true;
     const buildDFSToggleOn = false;
     const buildBFSToggleOn = false;
+    const buildGSToggleOn = false;
     const buildToggleOn = false;
 
     const index = 0;
@@ -221,6 +259,7 @@ class App extends React.Component<{}, AppState> {
       buildToggleOn,
       buildDFSToggleOn,
       buildBFSToggleOn,
+      buildGSToggleOn,
       resetToggle,
       index,
     });
