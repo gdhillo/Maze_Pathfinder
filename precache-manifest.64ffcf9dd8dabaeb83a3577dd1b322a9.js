@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f31f1219fb1565f357581f8c7245ad55",
+    "revision": "7596925a2bd2139891b7055ca504752c",
     "url": "/Maze_Pathfinder/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Maze_Pathfinder/static/css/2.deaf9b8d.chunk.css"
   },
   {
-    "revision": "4e767e05c420233992c1",
+    "revision": "98d02579b35d58949714",
     "url": "/Maze_Pathfinder/static/css/main.2206fc56.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Maze_Pathfinder/static/js/2.25ddb590.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4e767e05c420233992c1",
-    "url": "/Maze_Pathfinder/static/js/main.50f5dc22.chunk.js"
+    "revision": "98d02579b35d58949714",
+    "url": "/Maze_Pathfinder/static/js/main.f7a2c6ce.chunk.js"
   },
   {
     "revision": "934f430515e7680f93d3",
